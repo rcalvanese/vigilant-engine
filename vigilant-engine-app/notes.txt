@@ -1,0 +1,13 @@
+In order to pre-render a SvelteKit 1.0 static site you need to:
+
+Add to devDependencies in package.json (you can remove the default adapter-auto):
+    "@sveltejs/adapter-static": "next",
+Run npm install
+
+Add the following line to src/routes/+layout.js - create the file if it does not exist:
+
+    export const prerender = true;
+Run npm run build
+The static files will be generated in the build directory.
+
+More details at https://github.com/sveltejs/kit/tree/master/packages/adapter-static#sveltejsadapter-static
