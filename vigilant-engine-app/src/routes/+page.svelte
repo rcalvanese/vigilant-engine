@@ -4,3 +4,5 @@
 <p>&nbsp;</p>
 
 <p><a href="/about">ABOUT</a></p>
+
+<p><a href="/user">User</a></p>
