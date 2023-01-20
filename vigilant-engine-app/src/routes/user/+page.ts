@@ -16,12 +16,11 @@ export function load() {
 
 export const load = (async () => {
 
+    const user = await getUser();
 
-    
-    const user = getUser();
     console.log(user);
 
-    return {user};
+    return user;
 }) satisfies PageLoad;
 
 
@@ -29,7 +28,16 @@ async function getUser() {
     try {
         const response = await fetch('https://randomuser.me/api/');
         const user = await response.json();
-        return user;
+        
+        console.log(user.results.length);
+
+        if (user.results.length != 1) {
+          return null;
+        }
+
+        const oneUser = user.results[0];
+        //console.log("USER : " + {user});
+        return oneUser;
 
       } catch(err) {
         alert(err); // TypeError: failed to fetch
