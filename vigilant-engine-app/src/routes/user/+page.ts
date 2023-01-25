@@ -16,11 +16,12 @@ export function load() {
 
 export const load = (async () => {
 
-    const user = await getUser();
+  
+  const user = await getUser();
+  console.log("IN LOAD");
+  console.log(user);
 
-    console.log(user);
-
-    return user;
+  return user;
 }) satisfies PageLoad;
 
 
